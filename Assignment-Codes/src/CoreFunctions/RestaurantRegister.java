@@ -1,3 +1,5 @@
+package CoreFunctions;
+
 import entity.Restaurant;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,7 +22,7 @@ public class RestaurantRegister {
         System.out.println("1. Register Restaurant Details");
         System.out.println("2. Display Restaurant Details Entered");
         System.out.println("3. Store Your Details Into A File");
-        System.out.println("4. Cancel");
+        System.out.println("4. Return to Menu");
         
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter Your Choice : ");
@@ -99,13 +101,14 @@ public class RestaurantRegister {
         RegistrationMenu();
     }
     
-    public static void main(String[] args) {
+    public List<Restaurant> mainRegister() {
         
         RestaurantRegister registration = new RestaurantRegister();   
         
         registration.RegistrationMenu();
         
         System.out.println("Thank You");
+        return restaurantList; //bugged, does not return List
     }
     
 }

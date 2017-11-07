@@ -12,6 +12,10 @@ public class Restaurant implements Serializable{
     private String OwnerName;
     private String RestaurantPhone;
     
+    public Restaurant(){
+        
+    }
+    
     public Restaurant(int IdNumber){
         this.IdNumber = IdNumber;
     }
