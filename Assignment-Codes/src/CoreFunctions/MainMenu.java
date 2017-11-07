@@ -52,14 +52,14 @@ public class MainMenu {
                     CustomerLoggedIn = login.MainLogin(/*Here should put in the ArrayList Customer to refer*/); // This method should allow logged in customer to create an object. 
                     // parse it to Customer choose restaurant.
                     CustomerMenu cmenu = new CustomerMenu();
-                    System.out.print("Test Restaurant return : " + restaurantList.get(0).getOwnerName());
-                    cmenu.CustomerMenu(CustomerLoggedIn, restaurantList);
+                    // System.out.print("Test Restaurant return : " + restaurantList.get(0).getOwnerName()); 
+                    cmenu.CustomerMenu(CustomerLoggedIn, restaurantList); // RestaurantList does not goes to the method, printing nothing atm.
                     break;
                 case 2:
                     System.out.println("Login to Restaurant Owner Area");
                     //incomplete login function....bypass to RestaurantRegister
                     RestaurantRegister RR = new RestaurantRegister();
-                    restaurantList = RR.mainRegister(); //probably bugged. Wont return List1
+                    restaurantList = RR.mainRegister(); //probably bugged. Wont return List
                     break;
                 case 3:
                     System.out.println("Login to Staff Area");
