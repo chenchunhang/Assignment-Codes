@@ -17,7 +17,7 @@ public class RestaurantRegister {
 
     private List<Restaurant> restaurantList = new ArrayList<>();
     
-    public void RegistrationMenu(){
+    public List<Restaurant> RegistrationMenu(){
         
         System.out.println("1. Register Restaurant Details");
         System.out.println("2. Display Restaurant Details Entered");
@@ -46,6 +46,7 @@ public class RestaurantRegister {
             System.out.println("Please Enter Choices in Menu");
             RegistrationMenu();
         }
+        return restaurantList;
     }
     
     public void InputDetails(){
@@ -105,10 +106,14 @@ public class RestaurantRegister {
         
         RestaurantRegister registration = new RestaurantRegister();   
         
-        registration.RegistrationMenu();
+        List<Restaurant> listReturn = new ArrayList<Restaurant>();
+        listReturn = registration.RegistrationMenu();
+        
+        System.out.println(listReturn.get(0).getOwnerName());
+        
         
         System.out.println("Thank You");
-        return restaurantList; //bugged, does not return List
+        return listReturn; //bugged, does not return List
     }
     
 }

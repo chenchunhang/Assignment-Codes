@@ -22,11 +22,10 @@ import entity.*;
 public class CustomerMenu {
     
     
-    private List<Restaurant> restaurantList = new ArrayList<>();
-    private Customer customer = new Customer();
+
     
-    
-    public void CustomerMenu(Customer customer, List<Restaurant> restuarantList){
+    Scanner scan = new Scanner(System.in);
+    public void CustomerMenu(Customer customer, List<Restaurant> restaurantList){
         String details = "";
         System.out.println();
         System.out.println();
@@ -38,8 +37,14 @@ public class CustomerMenu {
             details += (i + 1) + ". " + restaurantList.get(i) + "\n";
         }
         System.out.println(details);
-        
-        
+        System.out.print("Please choose your desired restaurant:");
+        int answer = scan.nextInt();
+        if(answer <= restaurantList.size()+ 1 && answer>=0 ){
+            int choice = answer-1;
+            System.out.println(restaurantList.get(choice) + "\n");
+        }else{
+            System.out.println("Sorry, incorrect input.");
+        }
         
         // incomplete method, should have print all the registered restaurant and return back to main menu
     }
