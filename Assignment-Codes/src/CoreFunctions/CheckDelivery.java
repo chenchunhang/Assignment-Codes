@@ -18,7 +18,7 @@ import entity.*;
  */
 public class CheckDelivery {
     // fake Order object(ArrayList)
-    // fake deliveryman objectdasd
+    // fake deliveryman object
     // Main menu
     // Show Current Order(Main Menu)
    // Display fake Order object (Array List)
