@@ -62,7 +62,27 @@ public class MainMenu {
                         restaurantList = RR.mainRegister(); //probably bugged. Wont return List
                         break;
                     case 3:
-                        System.out.println("Login to Staff Area");
+                        System.out.println("Staff Area");
+                        System.out.println("======================");
+                        System.out.println("1.Login to Delivery Man Area");
+                        System.out.println("2.Login to Staff Management Area");
+                        System.out.println("======================\nEnter your choice:");
+                        int answer3 = scan.nextInt();
+                        if(answer3 == 1){
+                              Orders order = new Orders(8001, 5001 , "Fodd" , "aedasd" , 5 , "Paid"); // Fake Object TEST ONLY
+                              Orders order2 = new Orders(8002, 5001 , "Fodd" , "aedasd" , 5 , "Paid"); // Fake Object TEST ONLY
+                              List<Orders> orderlist = new ArrayList<Orders>(); // Fake Object TEST ONLY
+                              orderlist.add(order); // Fake Object TEST ONLY
+                              orderlist.add(order2); // Fake Object TEST ONLY
+                              DeliveryMan logged_DeliveryMan = new DeliveryMan(5001,"Lee", "PUCHONG" , "NIGHT", 3, 0143333333, 24); // Fake Object TEST ONLY
+                              DeliveryManMenu delman_menu = new DeliveryManMenu();
+                              delman_menu.showDeliveryMenu(logged_DeliveryMan, orderlist); // Pass in FAKE OBJECT
+                        }else if(answer3 == 2){
+                            // Human Resources department
+                                checkStaffInfo xd = new checkStaffInfo();
+                                xd.createStaffRecord();
+                                xd.checkStaffInfo();
+                        }
                         //incomplete
                         break;
                     case 4:
@@ -81,7 +101,7 @@ public class MainMenu {
                             //2. Ask Information
                             //3. Return Data back here.(ADD ArrayList)
                         }else if(answer2 == 2){
-                            System.out.println("Restaurant Registration Area");
+                            System.out.println("Restaurant Owner Registration Area");
                             //Restaurant Owner Registration Additional Information.
                             //1. Call Registration Method
                             //2. Ask Information

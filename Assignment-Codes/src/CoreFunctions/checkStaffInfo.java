@@ -77,12 +77,6 @@ public class checkStaffInfo {
         
     }
     
-   
-    public static void main(String[] args) {
-        checkStaffInfo xd = new checkStaffInfo();
-        xd.createStaffRecord();
-        xd.checkStaffInfo();
-       
-    }
+
     
 }

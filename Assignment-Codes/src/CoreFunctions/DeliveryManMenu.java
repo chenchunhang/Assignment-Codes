@@ -16,7 +16,7 @@ import entity.*;
  *
  * @author Daniel
  */
-public class CheckDelivery {
+public class DeliveryManMenu {
     // fake Order object(ArrayList)
     // fake deliveryman object
     // Main menu
@@ -42,7 +42,7 @@ public class CheckDelivery {
         
         System.out.println("Food Delivery Menu");
         System.out.println("1.View Current Food Order");
-        System.out.println("2.Exit");
+        System.out.println("2.Return to main menu");
         System.out.print("Enter Your Choice: ");
         int answer = scan.nextInt();
         if(answer == 1 | answer == 2){
@@ -55,20 +55,13 @@ public class CheckDelivery {
 
                   }
                   System.out.println("1.Back to Food Delivery Menu");
-                  System.out.println("2.Exit");
                   System.out.print("Enter Your Choice: ");
                   int answer1 = scan.nextInt();
                   if(answer1 == 1){
-                      this.showDeliveryMenu(deliveryman, orderlist);
-                  }else if(answer1 == 2){
-                       System.out.println("Thank you for using the System. Goodbye.");
-                    System.exit(0);
+                      this.showDeliveryMenu(deliveryman, orderlist); //Eating up CPU and Memory resources?
                   }
-                   
                     break;
                     case 2:
-                    System.out.println("Thank you for using the System. Goodbye.");
-                    System.exit(0);
                     break;
             }
             
@@ -84,7 +77,7 @@ public class CheckDelivery {
 
     }
      public static void main(String args[]){
-         CheckDelivery DeliveryManMenu = new CheckDelivery();
+         DeliveryManMenu DeliveryManMenu = new DeliveryManMenu();
          Orders order = new Orders(8001, 5001 , "Fodd" , "aedasd" , 5 , "Paid");
          Orders order2 = new Orders(8002, 5001 , "Fodd" , "aedasd" , 5 , "Paid");
          DeliveryMan logged_DeliveryMan = new DeliveryMan(5001,"Lee", "PUCHONG" , "NIGHT", 3, 0143333333, 24);
