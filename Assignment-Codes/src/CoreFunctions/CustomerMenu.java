@@ -32,19 +32,24 @@ public class CustomerMenu {
         System.out.println();
         System.out.println("Welcome back,"+ customer.getCustomerName() );
         System.out.println();
-        System.out.println("Here is a list of our current restaurant");
-        for(int i = 0; i < restaurantList.size(); i ++){
-            details += (i + 1) + ". " + restaurantList.get(i) + "\n";
-        }
-        System.out.println(details);
-        System.out.print("Please choose your desired restaurant:");
-        int answer = scan.nextInt();
-        if(answer <= restaurantList.size()+ 1 && answer>=0 ){
-            int choice = answer-1;
-            System.out.println(restaurantList.get(choice) + "\n");
+        if(restaurantList.size() !=0){
+            System.out.println("Here is a list of our current restaurant");
+            for(int i = 0; i < restaurantList.size(); i ++){
+                details += (i + 1) + ". " + restaurantList.get(i) + "\n";
+            }
+                System.out.println(details);
+                System.out.print("Please choose your desired restaurant:");
+                int answer = scan.nextInt();
+                if(answer <= restaurantList.size()+ 1 && answer>=0 ){
+                    int choice = answer-1;
+                    System.out.println(restaurantList.get(choice) + "\n");
+                }else{
+                    System.out.println("Sorry, incorrect input.");
+                }
         }else{
-            System.out.println("Sorry, incorrect input.");
+            System.out.println("At this time, there is no restaurant in the system.\nPlease wait for Restaurant Owners to add theirs.\nReturning....");
         }
+
         
         // incomplete method, should have print all the registered restaurant and return back to main menu
     }
