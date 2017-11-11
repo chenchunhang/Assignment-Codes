@@ -1,5 +1,6 @@
 # Assignment-Codes
 This is an assignment coding for TARUC.
-STRICTLY PROHIBITED FOR COPYING WITHOUT AUTHORIZATION
+Do not copy without Permission.
 
 Last Build Success on Travis CI : 11/11/2017
+
