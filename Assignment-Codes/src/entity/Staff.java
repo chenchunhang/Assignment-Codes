@@ -8,17 +8,17 @@ package entity;
 import java.util.*;
 
 public class Staff {
-     String staffID;
+     int staffID;
      String staffName;
      int staffPhone;
      String staffAddress;
      int staffAge;
     
-    public String getStaffID(){
+    public int getStaffID(){
    return staffID;
 }
-    public void setStaffID( String staffID){
-    this.staffID=staffID;
+    public void setStaffID( int staffID){
+   this.staffID=staffID;
 }
     public String getStaffName(){
         return staffName;

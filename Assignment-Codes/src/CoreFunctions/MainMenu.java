@@ -79,9 +79,9 @@ public class MainMenu {
                               delman_menu.showDeliveryMenu(logged_DeliveryMan, orderlist); // Pass in FAKE OBJECT
                         }else if(answer3 == 2){
                             // Human Resources department
-                                checkStaffInfo xd = new checkStaffInfo();
-                                xd.createStaffRecord();
-                                xd.checkStaffInfo();
+                                checkStaffInfo staffInfo = new checkStaffInfo();
+                                //staffInfo.createStaffRecord();
+                                staffInfo.checkStaffInfo();
                         }
                         //incomplete
                         break;

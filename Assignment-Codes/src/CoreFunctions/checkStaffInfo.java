@@ -4,10 +4,14 @@ package CoreFunctions;
 
 import java.util.*;
 import entity.Staff;
+import static java.util.Arrays.asList;
 
 public class checkStaffInfo {
 
-     ArrayList<Staff> staffInfo=  new ArrayList<Staff>();
+     ArrayList<String> staffInfo=  new ArrayList<>(Arrays.asList("1001","AHMAD","0103606589","bukitAman","25"));
+   
+     
+     
       Staff staff = new Staff();
       
       
@@ -20,34 +24,38 @@ public class checkStaffInfo {
              Scanner scanner = new Scanner(System.in); 
              System.out.println("Please key in the staff ID:");
              String id= scanner.nextLine();
-            //staff.getStaffID();
+             //staff.setStaffID(id);
+           
               
            
-            if(staffInfo.get(i).getStaffID().equals(id))
+            if(staffInfo.get(i).equals(id))
             {
-                System.out.println(staff.getStaffName());
-                System.out.println(staff.getStaffPhone());
-                System.out.println(staff.getStaffAddress());
-                System.out.println(staff.getStaffAge());
+               System.out.println(staffInfo.toString());
+                //System.out.println(staff.getStaffName());
+               //System.out.println(staff.getStaffPhone());
+               // System.out.println(staff.getStaffAddress());
+                //System.out.println(staff.getStaffAge());
+                //System.out.println("no record found");
+                
             }
             else
             {
-                System.out.println("gg");
+                System.out.println("no staff record found");
             }
                 
         }
         
         
     }
-    public void createStaffRecord(){
+    /*public void createStaffRecord(){
         
         
         System.out.println("Please enter staff information\n");
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("ID:\n");
-       String id="S001";
-       staff.setStaffID(id);
+       for(int i=1000;i>1;i++)
+       staff.setStaffID(i);
       
        
         System.out.println("Delivery Boy Name:\n");
@@ -74,9 +82,9 @@ public class checkStaffInfo {
        System.out.println(staff.getStaffPhone());
        System.out.println(staff.getStaffAddress());
        System.out.println(staff.getStaffAge());
-        
+       */
     }
     
 
     
-}
+
