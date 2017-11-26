@@ -3,8 +3,8 @@ package CoreFunctions;
 
 
 import java.util.*;
-import entity.Staff;
-import static java.util.Arrays.asList;
+import entity.*;
+
 
 public class checkStaffInfo {
 
@@ -83,7 +83,23 @@ public class checkStaffInfo {
        System.out.println(staff.getStaffAddress());
        System.out.println(staff.getStaffAge());
        */
+    
+    public void RetrievePendingOrder(List<Orders> orderlist ){
+        
+        System.out.println("The pending order list:");
+        System.out.println("List of food order\n");
+        System.out.println(String.format("%-10s %-12s %-12s %-12s %-12s %-12s\n", "Order ID", "Customer ID", "Order Name", "Order Product ID", "Product Quantity", "Payment Status"));
+         for (int i = 0; i < orderlist.size(); i++){
+             
+             if(orderlist.get(i).getPaymentStatus().equals("Pending")){
+                
+                System.out.println(orderlist.get(i).toString());
+             }
+         }
     }
+}
+   
+    
     
 
     

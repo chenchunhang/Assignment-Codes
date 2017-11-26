@@ -13,6 +13,20 @@ public class Staff {
      int staffPhone;
      String staffAddress;
      int staffAge;
+     String staffStatus;
+     
+     public Staff(){}
+     
+     public Staff(int staffID, String staffName, int staffPhone, String address,int staffAge, String staffStatus)
+     {
+         this.staffID=staffID;
+         this.staffName=staffName;
+         this.staffPhone=staffPhone;
+         this.staffAddress=address;
+         this.staffAge= staffAge;
+         this.staffStatus=staffStatus;
+     }
+     
     
     public int getStaffID(){
    return staffID;
@@ -45,4 +59,14 @@ public class Staff {
     public void setStaffAge(int staffAge){
         this.staffAge=staffAge;
     }
+    public void setStaffStatus(String staffStatus){
+        this.staffStatus=staffStatus;
+    }
+    public String getStaffStatus(){
+        return staffStatus;
+    }
+    
+    public String toString() {
+        return String.format("Staff ID : %5d / Name : %-20s / Phone : %10d / Address : %-20s / Age : %2d   Status : %-20s\n",staffID,staffName,staffPhone,staffAddress,staffAge,staffStatus);
+  }   
 }
