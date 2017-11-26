@@ -76,7 +76,7 @@ public class DeliveryManMenu {
         
 
     }
- /*    public static void main(String args[]){
+  /* public static void main(String args[]){
          DeliveryManMenu DeliveryManMenu = new DeliveryManMenu();
          Orders order = new Orders(8001, 5001 , "Fodd" , "aedasd" , 5 , "Paid");
          Orders order2 = new Orders(8002, 5001 , "Fodd" , "aedasd" , 5 , "Paid");
@@ -87,6 +87,7 @@ public class DeliveryManMenu {
          DeliveryManMenu.showDeliveryMenu(logged_DeliveryMan, orderlist );
          //int OrderID, int OrderCustomerID, String OrderName, String OrderProductID, int ProductQuantity, String PaymentStatus
          
-     }*/
+     }
+*/
     
 }
