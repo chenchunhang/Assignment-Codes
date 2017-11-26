@@ -22,17 +22,19 @@ public class DeliveryMan {
   //  private Calendar arriveTime;
     private int deliveryManPhoneNumber;
     private int deliveryManAge;
+  
     
     public DeliveryMan(){
         
     }
-      public DeliveryMan(int deliveryManID, String deliveryManName, String deliveryManAddress, String deliveryManShift, int deliveryCount, int deliveryManPhoneNumber, int deliveryManAge){
+      public DeliveryMan(int deliveryManID, String deliveryManName, String deliveryManAddress, String deliveryManShift, int deliveryCount, int deliveryManPhoneNumber, int deliveryManAge ){
         this.deliveryManName = deliveryManName;
         this.deliveryManAddress = deliveryManAddress;
         this.deliveryManShift = deliveryManShift;
         this.deliveryCount = deliveryCount;
         this.deliveryManPhoneNumber = deliveryManPhoneNumber;
         this.deliveryManAge = deliveryManAge;
+       
        
     }
        public int getDeliveryManID() {
@@ -68,6 +70,8 @@ public class DeliveryMan {
     public int getDeliveryManAge() {
         return deliveryManAge;
     }   
+    
+  
     // public static String getTime(Calendar time) {
    // return String.format("%02d:%02d:%02d", time.get(Calendar.HOUR_OF_DAY),
       //      time.get(Calendar.MINUTE), time.get(Calendar.SECOND));

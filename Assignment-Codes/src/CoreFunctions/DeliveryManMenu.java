@@ -40,7 +40,7 @@ public class DeliveryManMenu {
          //System.out.println("My Size:>>>"+DeliveryMan.size());
          System.out.println("Welcome "+DeliveryMan.get(0).getDeliveryManName());
         
-        System.out.println("Food Delivery Menu");
+        System.out.println("Food Delivery Menu Function List: ");
         System.out.println("1.View Current Food Order");
         System.out.println("2.Return to main menu");
         System.out.print("Enter Your Choice: ");
@@ -48,7 +48,10 @@ public class DeliveryManMenu {
         if(answer == 1 | answer == 2){
             switch(answer){
                 case 1:
-                    System.out.println("List of food order\n");
+                      System.out.println("");
+                      System.out.println("");
+                      System.out.println("List of ordered food detail: \n");
+                    
                     System.out.println(String.format("%-10s %-12s %-12s %-12s %-12s %-12s\n", "Order ID", "Customer ID", "Order Name", "Order Product ID", "Product Quantity", "Payment Status"));
                   for (int i = 0; i < orderlist.size(); i++){
                           System.out.println(orderlist.get(i));
@@ -58,10 +61,15 @@ public class DeliveryManMenu {
                   System.out.print("Enter Your Choice: ");
                   int answer1 = scan.nextInt();
                   if(answer1 == 1){
+               
                       this.showDeliveryMenu(deliveryman, orderlist); //Eating up CPU and Memory resources?
-                  }
+                  }else
+                      
                     break;
                     case 2:
+                       MainMenu menu = new MainMenu();
+                       menu.MainMenuFunctions();
+                        
                     break;
             }
             
