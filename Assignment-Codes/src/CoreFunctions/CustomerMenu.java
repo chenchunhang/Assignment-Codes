@@ -42,7 +42,9 @@ public class CustomerMenu {
                 int answer = scan.nextInt();
                 if(answer <= restaurantList.size()+ 1 && answer>=0 ){
                     int choice = answer-1;
-                    System.out.println(restaurantList.get(choice) + "\n");
+                    //System.out.println(restaurantList.get(choice) + "\n");
+                    System.out.print("You have choosed : " + restaurantList.get(choice).getRestaurantName() + "\n\n");
+                    System.out.println("Getting Food List......");
                 }else{
                     System.out.println("Sorry, incorrect input.");
                 }
@@ -53,4 +55,25 @@ public class CustomerMenu {
         
         // incomplete method, should have print all the registered restaurant and return back to main menu
     }
+    
+    public void CategoryList(){
+        System.out.print("Category");
+        System.out.println("===================");
+        System.out.println("1. Food");
+        System.out.println("2. Beverage");
+        System.out.println("3.Side Dishes");
+        System.out.println("Please enter your choice");
+        int catchoice = scan.nextInt();
+        if (catchoice == 1 ){
+            //Food
+        }if(catchoice ==  2){
+            //Beverages
+        }if(catchoice == 3){
+            //Side Dishes
+        }
+        
+    }
+    
+    
+    
 }
