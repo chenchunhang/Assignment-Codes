@@ -42,10 +42,13 @@ public class DeliveryManMenu {
         
         System.out.println("Food Delivery Menu Function List: ");
         System.out.println("1.View Current Food Order");
-        System.out.println("2.Return to main menu");
+        System.out.println("Delivery Man Function List: ");
+        System.out.println("2.View Working hour");
+        System.out.println("3.Return to main menu");
+        
         System.out.print("Enter Your Choice: ");
         int answer = scan.nextInt();
-        if(answer == 1 | answer == 2){
+        if(answer == 1 | answer == 2 | answer == 3){
             switch(answer){
                 case 1:
                       System.out.println("");
@@ -66,7 +69,11 @@ public class DeliveryManMenu {
                   }else
                       
                     break;
-                    case 2:
+                case 2:
+                    StaffWorkingHour hour = new StaffWorkingHour();
+                    hour.StaffWorkingHourFunction();
+                    break;
+                    case 3:
                        MainMenu menu = new MainMenu();
                        menu.MainMenuFunctions();
                         

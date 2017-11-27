@@ -11,30 +11,22 @@ package entity;
  */
 public class DeliveryManWorkingHour {
     private int hour;
-    private int month;
-    private int day;
+  
     
     public DeliveryManWorkingHour(){
     
 }
 
-    public DeliveryManWorkingHour(int hour, int month, int day) {
+    public DeliveryManWorkingHour(int hour ){
         this.hour = hour;
-        this.month = month;
-        this.day = day;
+       
     }
 
     public int getHour() {
         return hour;
     }
 
-    public int getMonth() {
-        return month;
-    }
-
-    public int getDay() {
-        return day;
-    }
+  
    
     
 }
