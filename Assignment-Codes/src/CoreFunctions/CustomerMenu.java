@@ -90,8 +90,12 @@ public class CustomerMenu {
             System.out.println("4. Pizza        RM5");
             System.out.println("5. Nasi Ayam    RM5");
             System.out.println("Please enter your choice");
-            int foodChoice = scan.nextInt();
-            
+            int foodChoice = 0;
+            if(scan.hasNext()){
+                foodChoice = scan.nextInt();
+            }else{
+                System.out.println("Sorry, incorrect input.");
+            }
             //String ItemName, String Category, int itemPrice , int quantity
             if(foodChoice == 1 ){
                 System.out.println("\n\nSelected Food : Nasi Lemak");
@@ -123,7 +127,10 @@ public class CustomerMenu {
                 quantity = scan.nextInt();
                 Items item = new Items("Nasi Ayam" , "Food" , 5 , quantity);
                 itemlist.add(item);
-            }
+            }if(foodChoice <= 0 || foodChoice >= 6){
+                    System.out.println("Sorry, incorrect input.");
+                    CategoryList();
+                }
         }if(catchoice ==  2){
             //Beverages
             System.out.println("\n\nBeverages");
@@ -168,7 +175,10 @@ public class CustomerMenu {
                 System.out.println("Please enter quatity: ");
                 quantity = scan.nextInt();
                 Items item = new Items("Kopi" , "Beverages" , 2 , quantity);itemlist.add(item);
-            }
+            }if(beverageChoice <= 0 || beverageChoice >= 6){
+                    System.out.println("Sorry, incorrect input.");
+                    CategoryList();
+                }
         }if(catchoice == 3){
             //Side Dishes
             System.out.println("\n\nDesserts");
@@ -213,7 +223,13 @@ public class CustomerMenu {
                 System.out.println("Please enter quatity: ");
                 quantity = scan.nextInt();
                 Items item = new Items("KitKat Ice Cream" , "Desserts" , 2 , quantity);itemlist.add(item);
-            }
+            }if(dessertchoice <= 0 || dessertchoice >= 6){
+                    System.out.println("Sorry, incorrect input.");
+                    CategoryList();
+                }
+        }if(catchoice <= 0 || catchoice >= 4){
+                    System.out.println("Sorry, incorrect input.");
+                    CategoryList();
         }
         
     }
