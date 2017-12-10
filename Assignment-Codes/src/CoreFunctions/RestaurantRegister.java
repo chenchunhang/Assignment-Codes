@@ -40,6 +40,8 @@ public class RestaurantRegister {
                 StoreDetails();
                 break;
             case 4:
+                MainMenu main = new MainMenu();
+                main.MainMenuFunctions();
                 break;
             } 
         }else{

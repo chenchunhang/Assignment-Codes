@@ -7,7 +7,7 @@ import entity.*;
  *
  * @author User
  */
-public class AddMenu {
+public class MaintainMenu {
     
     private List<Menu> menuList = new ArrayList<>();
     private List<Menu> beverageList = new ArrayList<>();
@@ -15,15 +15,18 @@ public class AddMenu {
     
     public void ProcessMenu(){
         
+        System.out.println("Maintain Menu");
         System.out.println("1. Register Menu : ");
-        System.out.println("2. Update Menu : ");
-        System.out.println("3. Cancel");
+        System.out.println("2. Display Menu : ");
+        System.out.println("3. Update Menu : ");
+        System.out.println("4. Delete Menu : ");
+        System.out.println("5. Cancel");
         
         Scanner scan = new Scanner(System.in);
         
         int option = scan.nextInt();
         
-        if(option <= 0 && option >= 4){
+        if(option <= 0 && option >= 6){
             System.out.println("Please Select the options in the Menu");
             ProcessMenu();
         }else{
@@ -32,9 +35,17 @@ public class AddMenu {
                     InputDetails();
                     break;
                 case 2:
-                    UpdateDetails();
+                    DisplayDetails();
                     break;
                 case 3:
+                    UpdateDetails();
+                    break;
+                case 4:
+                    DeleteDetails();
+                    break;
+                case 5:
+                    MainMenu main = new MainMenu();
+                    main.MainMenuFunctions();
                     break;
             }
         }
@@ -49,13 +60,13 @@ public class AddMenu {
         String answer;
         
         do{
-            System.out.println("Menu ID : ");
+            System.out.println("Menu ID (\"F\" as Food , \"D\" as Drink): ");
             String menuId = scan.nextLine();
             
             char checkFirstId = menuId.charAt(0);
             
             if(checkFirstId != 'F' && checkFirstId != 'D'){
-                System.out.println("Please Enter Valid ID");
+                System.out.println("Please Enter Valid ID (\"F\" as Food , \"D\" as Drink)");
                 InputDetails();
             }
             
@@ -81,7 +92,6 @@ public class AddMenu {
             
         }while(answer.equals("y") || answer.equals("Y")); 
         
-        DisplayDetails();
         ProcessMenu();
     }
     
@@ -96,17 +106,10 @@ public class AddMenu {
         System.out.println("2. Beverage List");
         int option = scanInt.nextInt();
         
-        String str = "";
         if(option == 1){
-            for (int i = 0; i < menuList.size(); ++i) {
-            str += (i + 1) + ". " + menuList.get(i) + "\n";
-            }
-            System.out.println(str);
+            DisplayFoodMenu();
         }else if(option == 2){
-            for (int i = 0; i < beverageList.size(); ++i){
-            str += (i + 1) + "." + beverageList.get(i) + "\n";
-            }
-            System.out.println(str);
+            DisplayBeverageMenu();
         }else{
             System.out.println("Please Select Exist Menu");
             UpdateDetails();
@@ -145,13 +148,53 @@ public class AddMenu {
                 beverageList.set(number,updatemenu);
                 break;
         }
-        DisplayDetails();
+        ProcessMenu();
+    }
+    
+    public void DeleteDetails(){
+        Scanner scanInt = new Scanner(System.in);
+        
+        System.out.println("Which Menu That You Wanted to Delete : ");
+        System.out.println("1. Food List");
+        System.out.println("2. Beverage List");
+        int option = scanInt.nextInt(); 
+        
+        if(option == 1){
+            DisplayFoodMenu();
+        }else if(option == 2){
+            DisplayBeverageMenu();
+        }else{
+            System.out.println("Please Select Exist Menu");
+            DeleteDetails();
+        }
+        
+        System.out.println("Please Select The Menu That You Wanted to Delete : ");
+        int selectmenu = scanInt.nextInt();
+        int number = selectmenu - 1;
+        
+        switch(option){
+            case 1:
+                getmenu = menuList.remove(number);
+                break;
+            case 2:
+                getmenu = beverageList.remove(number);
+                break;
+        }
+        
         ProcessMenu();
     }
     
     public void DisplayDetails(){
-        String menudetails = "";
-        String beveragedetails = "";
+        
+        DisplayFoodMenu();
+        DisplayBeverageMenu();
+        
+        ProcessMenu();
+    }
+    
+    public void DisplayFoodMenu(){
+        
+        String menudetails = "";  
         
         int i;
         
@@ -159,19 +202,27 @@ public class AddMenu {
             menudetails += (i + 1) + ". " + menuList.get(i) + "\n";
         }
         
+        System.out.println("Food Menu");
+        System.out.println(menudetails);
+    }
+    
+    public void DisplayBeverageMenu(){
+        
+        String beveragedetails = "";
+        
+        int i;
+        
         for (i = 0; i < beverageList.size(); ++i){
             beveragedetails += (i + 1) + "." + beverageList.get(i) + "\n";
         }
         
-        System.out.println("Food Menu");
-        System.out.println(menudetails);
         System.out.println("Beverages Menu");
-        System.out.println(beveragedetails);       
+        System.out.println(beveragedetails);  
     }
     
-    public static void main(String args[]){
+    public void mainMaintainMenu(){
         
-        AddMenu addmenu = new AddMenu();
+        MaintainMenu addmenu = new MaintainMenu();
         
         addmenu.ProcessMenu();
     }

@@ -59,10 +59,21 @@ public class MainMenu {
                         break;
                     case 2:
                         System.out.println("Login to Restaurant Owner Area");
+                        System.out.println("1. Register Restaurant");
+                        System.out.println("2. Maintain Menu");
+                        int option = scan.nextInt();
                         //incomplete login function....bypass to RestaurantRegister
-                        RestaurantRegister RR = new RestaurantRegister();
-                        restaurantList = RR.mainRegister(); //probably bugged. Wont return List
-                        break;
+                        switch(option){
+                            case 1:
+                                RestaurantRegister RR = new RestaurantRegister();
+                                restaurantList = RR.mainRegister(); //probably bugged. Wont return List
+                                break;
+                            case 2:
+                                MaintainMenu MM = new MaintainMenu();
+                                MM.mainMaintainMenu();
+                                break;
+                        }
+                        
                     case 3:
                         System.out.println("Staff Area");
                         System.out.println("======================");
