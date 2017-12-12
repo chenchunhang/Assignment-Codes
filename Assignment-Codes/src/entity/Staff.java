@@ -66,6 +66,7 @@ public class Staff {
         return staffStatus;
     }
     
+    
     public String toString() {
         return String.format("Staff ID : %5d / Name : %-20s / Phone : %10d / Address : %-20s / Age : %2d   Status : %-20s\n",staffID,staffName,staffPhone,staffAddress,staffAge,staffStatus);
   }   

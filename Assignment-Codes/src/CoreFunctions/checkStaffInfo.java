@@ -8,7 +8,7 @@ import entity.*;
 
 public class checkStaffInfo {
 
-     ArrayList<String> staffInfo=  new ArrayList<>(Arrays.asList("1001","AHMAD","0103606589","bukitAman","25"));
+     ArrayList staffInfo=  new ArrayList();
    
      
      
@@ -18,24 +18,20 @@ public class checkStaffInfo {
     
     
     public void checkStaffInfo(){
-      
+       Scanner scanner = new Scanner(System.in); 
+             System.out.println("Please key in the staff ID:");
+             int id= scanner.nextInt();
+             staff.setStaffID(id);
         for(int i=0;i<staffInfo.size();i++)
         {
-             Scanner scanner = new Scanner(System.in); 
-             System.out.println("Please key in the staff ID:");
-             String id= scanner.nextLine();
-             //staff.setStaffID(id);
-           
-              
-           
             if(staffInfo.get(i).equals(id))
             {
-               System.out.println(staffInfo.toString());
-                //System.out.println(staff.getStaffName());
-               //System.out.println(staff.getStaffPhone());
-               // System.out.println(staff.getStaffAddress());
-                //System.out.println(staff.getStaffAge());
-                //System.out.println("no record found");
+               //System.out.println(staffInfo.toString());
+                System.out.println(staff.getStaffName());
+               System.out.println(staff.getStaffPhone());
+                System.out.println(staff.getStaffAddress());
+                System.out.println(staff.getStaffAge());
+              //  System.out.println("no record found");
                 
             }
             else
@@ -47,15 +43,16 @@ public class checkStaffInfo {
         
         
     }
-    /*public void createStaffRecord(){
+    public void createStaffRecord(){
+         
         
         
         System.out.println("Please enter staff information\n");
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("ID:\n");
-       for(int i=1000;i>1;i++)
-       staff.setStaffID(i);
+       int i=1000;
+       staff.setStaffID(++i);
       
        
         System.out.println("Delivery Boy Name:\n");
@@ -75,14 +72,18 @@ public class checkStaffInfo {
         System.out.println("Deliver Boy Age:\n");
        int age= scanner.nextInt();
        staff.setStaffAge(age);
-        
+        staffInfo.add(staff);
+       
+      
        staffInfo.add(staff);
-       System.out.println(staff.getStaffID());
+      System.out.println(staff.getStaffID());
        System.out.println(staff.getStaffName());
        System.out.println(staff.getStaffPhone());
        System.out.println(staff.getStaffAddress());
        System.out.println(staff.getStaffAge());
-       */
+    
+        }
+       
     
     public void RetrievePendingOrder(List<Orders> orderlist ){
         
@@ -96,6 +97,33 @@ public class checkStaffInfo {
                 System.out.println(orderlist.get(i).toString());
              }
          }
+    }
+    
+    public void DailyTrasactionReport(){
+        
+        for(int i=0;i<staffInfo.size();i++){
+        System.out.println("Daily Transation Report");
+        System.out.println("Delivery Man ID:\n"+ staff.getStaffID());
+        System.out.println("Delivery Man Name:\n"+staff.getStaffName());
+        System.out.println("Total Delivery Completed:\n"); 
+        System.out.println("12\n");
+        System.out.println("14\n");
+        System.out.println("20\n");
+        System.out.println("Total Distance Delivered:\n"); 
+        System.out.println("40km\n");
+        System.out.println("50km\n");
+        System.out.println("85km\n");
+        System.out.println("");
+        }
+        
+        
+        
+    }
+    public static void main(String args[]){
+        checkStaffInfo kk= new checkStaffInfo();
+        kk.createStaffRecord();
+        kk.checkStaffInfo();
+        kk.DailyTrasactionReport();
     }
 }
    

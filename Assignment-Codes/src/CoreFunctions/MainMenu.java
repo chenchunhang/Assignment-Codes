@@ -99,6 +99,7 @@ public class MainMenu {
                                 System.out.println("2.Update Staff Record");
                                 System.out.println("3.View Pending Order");
                                 System.out.println("4.View Transaction Report");
+                                System.out.println("5.Create Staff Record");
                                 System.out.println("Please enter you selection:");
                                 int answer5= scan.nextInt();
                                 if(answer5 ==1){
@@ -118,7 +119,11 @@ public class MainMenu {
                                     staffInfo.RetrievePendingOrder(orderlist);
                                 }
                                 else if(answer5==4){
-                                    System.out.println("Hi");
+                                    staffInfo.DailyTrasactionReport();
+                                       
+                                            }
+                                else if(answer5==5){
+                                    staffInfo.createStaffRecord();
                                 }
                                
                               
