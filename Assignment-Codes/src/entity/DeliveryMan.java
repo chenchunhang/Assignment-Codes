@@ -18,8 +18,8 @@ public class DeliveryMan {
     private String deliveryManAddress = "";
     private String deliveryManShift = "";
     private int deliveryCount;
-   //private Calendar startTime;
-  //  private Calendar arriveTime;
+    //private Calendar startTime;
+    //private Calendar arriveTime;
     private int deliveryManPhoneNumber;
     private int deliveryManAge;
     private String userName;

@@ -37,21 +37,26 @@ public class DeliveryManMenu {
     public void showDeliveryMenu(DeliveryMan deliveryman,  List<Orders> orderlist){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
+        boolean validation = true;
+        String workStatus = "";
 
         DeliveryManLogin login = new DeliveryManLogin();
-         DeliveryManLoggedIn = login.DeliveryManLogin();
+        DeliveryManLoggedIn = login.DeliveryManLogin();
        
          DeliveryMan.add(DeliveryManLoggedIn);
+          do{ 
          //System.out.println("My Size:>>>"+DeliveryMan.size());
          System.out.println("|****************************************************|");
          System.out.println("");
-         System.out.println("    Welcome "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
-         System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
-         System.out.println("    Clock in at : " + dateFormat.format(date));
+         System.out.println("    Welcome       "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
+         System.out.println("    Shift       : "+DeliveryMan.get(0).getDeliveryManShift());
+         System.out.println("    Clock in at : "+ dateFormat.format(date));
+         System.out.println("    Status      : "+ workStatus);
          System.out.println("");
          System.out.println("|****************************************************|");
-                
-        
+         
+       
+         
         System.out.println("Food Delivery Menu Function List: ");
         System.out.println("1.View Current Food Order");
         System.out.println("Delivery Man Function List: ");
@@ -79,7 +84,9 @@ public class DeliveryManMenu {
                   int answer1 = scan.nextInt();
                   if(answer1 == 1){
                
-                      this.showDeliveryMenu(deliveryman, orderlist); //Eating up CPU and Memory resources?
+                      validation = false;
+                      System.out.println("\n\n");
+                      break;
                   }else
                       
                     break;
@@ -88,36 +95,73 @@ public class DeliveryManMenu {
                     hour.StaffWorkingHourFunction();
                     break;
                 case 3:
+                    int counter1 = 0;
+                    while(counter1 == 0){                                        
+                    System.out.println("Change current work status");
+                    System.out.println("1.Available");
+                    System.out.println("2.Delivery");
+                    System.out.println("3.Break");
+                    System.out.println("Enter Your Choice: ");
+                    int answer3 = scan.nextInt();
+                    if(answer3 == 1 ){                   
+                    workStatus = "Avalilable";
+                    System.out.println("\n\nWork status change successful!");
+                    counter1 = 1;
+                    validation = false;
+                    }else if(answer3 == 2){
+                        
+                    workStatus = "Delivery";
+                    System.out.println("\n\nWork status change successful!");
+                    counter1 = 1;
+                    validation = false;
+                    }else if(answer3 == 3){
+
+                    workStatus = "Break";
+                    System.out.println("\n\nWork status change successful!");
+                    counter1 = 1;
+                    validation = false;
+                                                              
+                    }else{
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("Sorry, Input Incorrect. Please try again.");
                     
+                    
+                }       
+                    }
                     break;
                 case 4:
                     DateFormat dateFormat1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     Date date1 = new Date();
+                    int couter = 0;
+                    
+                    while(couter == 0){
                     System.out.println("Clocking out the system. Are you sure?");
                     System.out.println("1.Yes");
                     System.out.println("2.Undo");
                     System.out.print("Enter Your Choice: ");
                     int answer2 = scan.nextInt();
                     if(answer2 == 1){
-         System.out.println("|****************************************************|");
-         System.out.println("");
-         System.out.println("    Good Bye "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
-         System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
-         System.out.println("    Clock out at : " + dateFormat1.format(date1));
-         System.out.println("");
-         System.out.println("|****************************************************|");
+                        System.out.println("|****************************************************|");
+                        System.out.println("");
+                        System.out.println("    Good Bye "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
+                        System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
+                        System.out.println("    Clock out at : " + dateFormat1.format(date1));
+                        System.out.println("");
+                        System.out.println("|****************************************************|\n\n");
+                        
+                        couter = 1;
                     
                     
                      MainMenu menu = new MainMenu();
                        menu.MainMenuFunctions();
                     
-                }else if(answer2 == 2){
-                        this.showDeliveryMenu(deliveryman, orderlist);
-                        
-                        }
-                else{
-                    //how to do while loop
-                }
+                    }else if(answer2 == 2){
+                        validation = false;
+                        System.out.println("\n\n");
+                        couter = 1;
+                    }
+                    }
                     
                     break;
                     case 5:
@@ -132,10 +176,9 @@ public class DeliveryManMenu {
             System.out.println("");
             System.out.println("");
             System.out.println("Sorry, Input Incorrect. Please try again.");
-            this.showDeliveryMenu(deliveryman, orderlist);
-            
+            validation = false;
         }
-        
+        }while(!validation);
 
     }
   /* public static void main(String args[]){
