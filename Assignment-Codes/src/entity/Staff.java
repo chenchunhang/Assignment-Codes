@@ -8,12 +8,12 @@ package entity;
 import java.util.*;
 
 public class Staff {
-     int staffID;
-     String staffName;
-     int staffPhone;
-     String staffAddress;
-     int staffAge;
-     String staffStatus;
+     private int staffID;
+     private String staffName;
+     private int staffPhone;
+     private String staffAddress;
+     private int staffAge;
+     private String staffStatus;
      
      public Staff(){}
      
@@ -29,10 +29,12 @@ public class Staff {
      
     
     public int getStaffID(){
+       
    return staffID;
 }
     public void setStaffID( int staffID){
    this.staffID=staffID;
+
 }
     public String getStaffName(){
         return staffName;

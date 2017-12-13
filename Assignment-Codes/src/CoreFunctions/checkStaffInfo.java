@@ -8,14 +8,14 @@ import entity.*;
 
 public class checkStaffInfo {
 
-     ArrayList <Staff> staffInfo=  new ArrayList<>();
-     Staff staff = new Staff();
+     List <Staff> staffInfo=  new ArrayList<Staff>();
+     
       
-      private static int empNum = 1000;
+      public static int empNum = 1000;
     
     
     public void checkStaffInfomation(){
-        
+       Staff staff = new Staff();
        Scanner scanner = new Scanner(System.in); 
              System.out.println("Please key in the staff ID:");
              int id= scanner.nextInt();
@@ -43,45 +43,52 @@ public class checkStaffInfo {
          String answer = "y";
        
         while(answer.equals("y") || answer.equals("Y") ){
-        System.out.println("Please enter staff information\n");
-        Scanner scanner = new Scanner(System.in);
-        
-        
-        System.out.println("ID:\n");
-       
-       staff.setStaffID(getUniqueEmpId());
-      
-       
-        System.out.println("Delivery Boy Name:\n");
-       String name= scanner.nextLine();
-       staff.setStaffName(name);
-       
-         System.out.println("Deliver Boy Address:\n");
-       String address= scanner.nextLine();
-       staff.setStaffAddress(address);
-       
-        System.out.println("Delivery Phone Number:\n");
-       int phoneNum= scanner.nextInt();
-       staff.setStaffPhone(phoneNum);
-       
-      
-       
-        System.out.println("Deliver Boy Age:\n");
-       int age= scanner.nextInt();
-       staff.setStaffAge(age);
-        
-       
-      
-       staffInfo.add(staff);
-      System.out.println(staff.getStaffID());
-       System.out.println(staff.getStaffName());
-       System.out.println(staff.getStaffPhone());
-       System.out.println(staff.getStaffAddress());
-       System.out.println(staff.getStaffAge());
-       
-       System.out.println("Do u want to add record again?(y or Y)");
-       answer= scanner.next();
-       
+            Staff staff = new Staff();
+            System.out.println("Please enter staff information\n");
+            Scanner scanner = new Scanner(System.in);
+
+
+            System.out.println("ID:\n");
+
+           staff.setStaffID(getUniqueEmpId());
+
+
+            System.out.println("Delivery Boy Name:\n");
+           String name= scanner.nextLine();
+           staff.setStaffName(name);
+
+             System.out.println("Deliver Boy Address:\n");
+           String address= scanner.nextLine();
+           staff.setStaffAddress(address);
+
+            System.out.println("Delivery Phone Number:\n");
+           int phoneNum= scanner.nextInt();
+           staff.setStaffPhone(phoneNum);
+
+
+
+            System.out.println("Deliver Boy Age:\n");
+           int age= scanner.nextInt();
+           staff.setStaffAge(age);
+
+            List <Staff> staffInfo2=  new ArrayList<Staff>();
+            //int staffID, String staffName, int staffPhone, String address,int staffAge, String staffStatu
+/*            Staff testStaff1 = new Staff(1,"1",1,"1",1,"1");
+            Staff testStaff2 = new Staff(2,"2",2,"2",2,"2");
+            staffInfo2.add(testStaff1);
+            staffInfo2.add(testStaff2);
+            System.out.println(staffInfo2.get(0).getStaffID());
+           System.out.println(staffInfo2.get(1).getStaffID());*/
+           staffInfo.add(staff);
+          System.out.println(staff.getStaffID());
+           System.out.println(staff.getStaffName());
+           System.out.println(staff.getStaffPhone());
+           System.out.println(staff.getStaffAddress());
+           System.out.println(staff.getStaffAge());
+           System.out.println(staffInfo.get(0).getStaffID());
+           System.out.println("Do u want to add record again?(y or Y)");
+           answer= scanner.next();
+
      }
     }
        
@@ -101,7 +108,8 @@ public class checkStaffInfo {
     }
     
     public void DailyTrasactionReport(){
-        
+        System.out.println(staffInfo.get(0).getStaffID());
+        System.out.println(staffInfo.get(1).getStaffID());
         for(int i=0;i<staffInfo.size();i++){
         System.out.println("Daily Transation Report");
         System.out.println(staffInfo.size());
@@ -121,9 +129,10 @@ public class checkStaffInfo {
         
         
     }
+    
     public static int getUniqueEmpId() {
-        empNum = empNum + 1;
-        return empNum;
+        System.out.println("Here" + empNum);
+        return empNum++;
     }
     public static void main(String args[]){
         checkStaffInfo kk= new checkStaffInfo();
