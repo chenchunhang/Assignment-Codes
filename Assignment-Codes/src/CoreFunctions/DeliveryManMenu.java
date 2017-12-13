@@ -12,6 +12,8 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import CoreFunctions.*;
 import entity.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author Daniel
@@ -33,22 +35,34 @@ public class DeliveryManMenu {
     
     
     public void showDeliveryMenu(DeliveryMan deliveryman,  List<Orders> orderlist){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+
         DeliveryManLogin login = new DeliveryManLogin();
          DeliveryManLoggedIn = login.DeliveryManLogin();
        
          DeliveryMan.add(DeliveryManLoggedIn);
          //System.out.println("My Size:>>>"+DeliveryMan.size());
-         System.out.println("Welcome "+DeliveryMan.get(0).getDeliveryManName());
+         System.out.println("|****************************************************|");
+         System.out.println("");
+         System.out.println("    Welcome "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
+         System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
+         System.out.println("    Clock in at : " + dateFormat.format(date));
+         System.out.println("");
+         System.out.println("|****************************************************|");
+                
         
         System.out.println("Food Delivery Menu Function List: ");
         System.out.println("1.View Current Food Order");
         System.out.println("Delivery Man Function List: ");
         System.out.println("2.View Working hour");
-        System.out.println("3.Return to main menu");
+        System.out.println("3.Change Working Status");
+        System.out.println("4.Clock out");
+        System.out.println("5.Return to main menu");
         
         System.out.print("Enter Your Choice: ");
         int answer = scan.nextInt();
-        if(answer == 1 | answer == 2 | answer == 3){
+        if(answer == 1 | answer == 2 | answer == 3 | answer == 4 | answer == 5){
             switch(answer){
                 case 1:
                       System.out.println("");
@@ -73,7 +87,40 @@ public class DeliveryManMenu {
                     StaffWorkingHour hour = new StaffWorkingHour();
                     hour.StaffWorkingHourFunction();
                     break;
-                    case 3:
+                case 3:
+                    
+                    break;
+                case 4:
+                    DateFormat dateFormat1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                    Date date1 = new Date();
+                    System.out.println("Clocking out the system. Are you sure?");
+                    System.out.println("1.Yes");
+                    System.out.println("2.Undo");
+                    System.out.print("Enter Your Choice: ");
+                    int answer2 = scan.nextInt();
+                    if(answer2 == 1){
+         System.out.println("|****************************************************|");
+         System.out.println("");
+         System.out.println("    Good Bye "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
+         System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
+         System.out.println("    Clock out at : " + dateFormat1.format(date1));
+         System.out.println("");
+         System.out.println("|****************************************************|");
+                    
+                    
+                     MainMenu menu = new MainMenu();
+                       menu.MainMenuFunctions();
+                    
+                }else if(answer2 == 2){
+                        this.showDeliveryMenu(deliveryman, orderlist);
+                        
+                        }
+                else{
+                    //how to do while loop
+                }
+                    
+                    break;
+                    case 5:
                        MainMenu menu = new MainMenu();
                        menu.MainMenuFunctions();
                         

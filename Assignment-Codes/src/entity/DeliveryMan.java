@@ -22,18 +22,22 @@ public class DeliveryMan {
   //  private Calendar arriveTime;
     private int deliveryManPhoneNumber;
     private int deliveryManAge;
+    private String userName;
+    private String userPassword;
   
     
     public DeliveryMan(){
         
     }
-      public DeliveryMan(int deliveryManID, String deliveryManName, String deliveryManAddress, String deliveryManShift, int deliveryCount, int deliveryManPhoneNumber, int deliveryManAge ){
+      public DeliveryMan(int deliveryManID, String deliveryManName, String deliveryManAddress, String deliveryManShift, int deliveryCount, int deliveryManPhoneNumber, int deliveryManAge, String userName, String userPassword){
         this.deliveryManName = deliveryManName;
         this.deliveryManAddress = deliveryManAddress;
         this.deliveryManShift = deliveryManShift;
         this.deliveryCount = deliveryCount;
         this.deliveryManPhoneNumber = deliveryManPhoneNumber;
         this.deliveryManAge = deliveryManAge;
+        this.userName = userName;
+        this.userPassword = userPassword;
        
        
     }
@@ -82,5 +86,13 @@ public class DeliveryMan {
  // public String toString() {
    // return String.format("%-12d", deliveryManName);
  // }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
     
 }
