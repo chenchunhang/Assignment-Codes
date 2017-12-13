@@ -17,7 +17,7 @@ public class Staff {
      
      public Staff(){}
      
-     public Staff(int staffID, String staffName, int staffPhone, String address,int staffAge, String staffStatus)
+     public Staff(int staffID, String staffName, int staffPhone, String address,int staffAge)
      {
          this.staffID=staffID;
          this.staffName=staffName;

@@ -105,7 +105,7 @@ public class MainMenu {
                                 int answer5= scan.nextInt();
                                 if(answer5 ==1){
                                     
-                                staffInfo.checkStaffInfomation();
+                               
                                 }
                                 else if(answer5==2){
                                     System.out.println("Hi");
@@ -125,12 +125,13 @@ public class MainMenu {
                                             }
                                 else if(answer5==5){
                                     staffInfo.createStaffRecord();
+                                    staffInfo.DailyTrasactionReport();
                                 }
                                
-                              
+                        break;      
                         }
                         //incomplete
-                        break;
+                        
                     case 4:
                         System.out.println();
                         System.out.println();

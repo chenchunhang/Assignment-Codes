@@ -8,34 +8,37 @@ import entity.*;
 
 public class checkStaffInfo {
 
-     List <Staff> staffInfo=  new ArrayList<Staff>();
-     
-      
+     ArrayList <Staff> staffInfo=  new ArrayList<>();
       public static int empNum = 1000;
     
     
     public void checkStaffInfomation(){
-       Staff staff = new Staff();
+      
        Scanner scanner = new Scanner(System.in); 
-             System.out.println("Please key in the staff ID:");
-             int id= scanner.nextInt();
-            // staff.setStaffID(id);
-        for(int i=1;i<staffInfo.size();i++)
+        System.out.println(staffInfo.get(0).getStaffID());
+             
+        for(int i=0;i<staffInfo.size();i++)
         {
-            if(!staffInfo.get(i).equals(id))
+            System.out.println("Please key in the staff ID:");
+            int id= scanner.nextInt();
+            System.out.println(id);
+            if( staffInfo.get(i).getStaffID() == id)
             {
-                System.out.println(staff.getStaffName());
+             //   System.out.println(staffInfo.toString());
+                 Staff staff = staffInfo.get(i);
                 System.out.println(staff.getStaffPhone());
                 System.out.println(staff.getStaffAddress());
                 System.out.println(staff.getStaffAge());
+               // System.out.println("no found");
+                
             }
             else
             {
-             System.out.println("no record found");
+              System.out.println("no found");
+
+            }        
                 
-            }
-                
-        }
+        }   
         
         
     }
@@ -66,26 +69,19 @@ public class checkStaffInfo {
            staff.setStaffPhone(phoneNum);
 
 
-
             System.out.println("Deliver Boy Age:\n");
            int age= scanner.nextInt();
            staff.setStaffAge(age);
 
-            List <Staff> staffInfo2=  new ArrayList<Staff>();
-            //int staffID, String staffName, int staffPhone, String address,int staffAge, String staffStatu
-/*            Staff testStaff1 = new Staff(1,"1",1,"1",1,"1");
-            Staff testStaff2 = new Staff(2,"2",2,"2",2,"2");
-            staffInfo2.add(testStaff1);
-            staffInfo2.add(testStaff2);
-            System.out.println(staffInfo2.get(0).getStaffID());
-           System.out.println(staffInfo2.get(1).getStaffID());*/
+            
+            
            staffInfo.add(staff);
           System.out.println(staff.getStaffID());
            System.out.println(staff.getStaffName());
            System.out.println(staff.getStaffPhone());
            System.out.println(staff.getStaffAddress());
            System.out.println(staff.getStaffAge());
-           System.out.println(staffInfo.get(0).getStaffID());
+          
            System.out.println("Do u want to add record again?(y or Y)");
            answer= scanner.next();
 
@@ -104,15 +100,16 @@ public class checkStaffInfo {
                 
                 System.out.println(orderlist.get(i).toString());
              }
+             
+             
          }
+         
     }
     
     public void DailyTrasactionReport(){
-        System.out.println(staffInfo.get(0).getStaffID());
-        System.out.println(staffInfo.get(1).getStaffID());
+        
         for(int i=0;i<staffInfo.size();i++){
         System.out.println("Daily Transation Report");
-        System.out.println(staffInfo.size());
         System.out.println("Delivery Man ID:\n"+ staffInfo.get(i).getStaffID());
         System.out.println("Delivery Man Name:\n"+staffInfo.get(i).getStaffName());
         System.out.println("Total Delivery Completed:\n"); 
@@ -131,14 +128,107 @@ public class checkStaffInfo {
     }
     
     public static int getUniqueEmpId() {
-        System.out.println("Here" + empNum);
+        System.out.println( + empNum);
         return empNum++;
+    }
+    public void updateInformation(){
+       //  Staff staff = new Staff();
+       Scanner scanner = new Scanner(System.in); 
+             System.out.println("Please key in the staff ID you wish to update:");
+             int id= scanner.nextInt();
+            // staff.setStaffID(id);
+        for(int i=0;i<staffInfo.size();i++)
+        {
+            if(staffInfo.get(i).getStaffID() == id)
+                
+            {
+                
+                Staff staff = staffInfo.get(i);
+                System.out.println(staff.getStaffName());
+                System.out.println(staff.getStaffPhone());
+                System.out.println(staff.getStaffAddress());
+                System.out.println(staff.getStaffAge());
+                  System.out.println("Key in the number you wish to update");
+                System.out.println("1. Name");
+                System.out.println("2. Phone Number");
+                System.out.println("3. Address");
+                System.out.println("4. Age");
+                int id2= scanner.nextInt();
+                //here should use switch statement instead if else
+                switch(id2)
+                {
+                    case 1:
+                    {
+                    System.out.println(staff.getStaffName());
+                    System.out.println("Enter a new name:");
+                    String name= scanner.next();
+                    staff.setStaffName(name);
+                    System.out.println(staff.getStaffName());
+                    System.out.println(staff.getStaffPhone());
+                    System.out.println(staff.getStaffAddress());
+                    System.out.println(staff.getStaffAge());
+                    }
+                    break;
+                
+                    case 2:
+                    {
+                    System.out.println(staff.getStaffPhone());
+                    System.out.println("Enter a new phone:");
+                    int phone= scanner.nextInt();
+                    staff.setStaffPhone(phone);
+                     System.out.println(staff.getStaffName());
+                     System.out.println(staff.getStaffPhone());
+                     System.out.println(staff.getStaffAddress());
+                     System.out.println(staff.getStaffAge());
+                    }
+                break;
+               
+                    case 3:
+                    {
+                    System.out.println(staff.getStaffAddress());
+                    System.out.println("Enter a new Address:");
+                    String address= scanner.next();
+                    staff.setStaffAddress(address);
+                    System.out.println(staff.getStaffName());
+                System.out.println(staff.getStaffPhone());
+                System.out.println(staff.getStaffAddress());
+                System.out.println(staff.getStaffAge());
+                    }
+                    break;
+                
+                    case 4:
+                    {
+                    System.out.println(staff.getStaffAge());
+                    System.out.println("Enter a new age:");
+                    int age= scanner.nextInt();
+                    staff.setStaffAge(age);
+                    System.out.println(staff.getStaffName());
+                System.out.println(staff.getStaffPhone());
+                System.out.println(staff.getStaffAddress());
+                System.out.println(staff.getStaffAge());
+                    }
+                   break;
+                    
+                
+                
+                
+                
+            }
+            }
+            
+                
+        }
+       
+              
+       
+        
     }
     public static void main(String args[]){
         checkStaffInfo kk= new checkStaffInfo();
        kk.createStaffRecord();
-      // kk.checkStaffInfomation();
-       kk.DailyTrasactionReport();
+       kk.updateInformation();
+     // kk.checkStaffInfomation();
+      // kk.DailyTrasactionReport();
     }
 }
    
