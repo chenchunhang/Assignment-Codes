@@ -87,9 +87,10 @@ public class MainMenu {
                               List<Orders> orderlist = new ArrayList<Orders>(); // Fake Object TEST ONLY
                               orderlist.add(order); // Fake Object TEST ONLY
                               orderlist.add(order2); // Fake Object TEST ONLY
-                              DeliveryMan logged_DeliveryMan = new DeliveryMan(5001,"Lee", "PUCHONG" , "NIGHT", 3, 0143333333, 24); // Fake Object TEST ONLY
+                              DeliveryMan logged_DeliveryMan = new DeliveryMan(5001,"Lee", "PUCHONG" , "NIGHT", 3, 0143333333, 24, "thianxin95", "1123456"); // Fake Object TEST ONLY
                               DeliveryManMenu delman_menu = new DeliveryManMenu();
                               delman_menu.showDeliveryMenu(logged_DeliveryMan, orderlist); // Pass in FAKE OBJECT
+                              
                         }else if(answer3 == 2){
                             // Human Resources department
                                 checkStaffInfo staffInfo = new checkStaffInfo();
@@ -99,11 +100,12 @@ public class MainMenu {
                                 System.out.println("2.Update Staff Record");
                                 System.out.println("3.View Pending Order");
                                 System.out.println("4.View Transaction Report");
+                                System.out.println("5.Create Staff Record");
                                 System.out.println("Please enter you selection:");
                                 int answer5= scan.nextInt();
                                 if(answer5 ==1){
                                     
-                                staffInfo.checkStaffInfo();
+                                staffInfo.checkStaffInfomation();
                                 }
                                 else if(answer5==2){
                                     System.out.println("Hi");
@@ -118,7 +120,11 @@ public class MainMenu {
                                     staffInfo.RetrievePendingOrder(orderlist);
                                 }
                                 else if(answer5==4){
-                                    System.out.println("Hi");
+                                    staffInfo.DailyTrasactionReport();
+                                       
+                                            }
+                                else if(answer5==5){
+                                    staffInfo.createStaffRecord();
                                 }
                                
                               
