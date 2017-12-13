@@ -104,7 +104,7 @@ public class MainMenu {
                                 int answer5= scan.nextInt();
                                 if(answer5 ==1){
                                     
-                                staffInfo.checkStaffInfo();
+                                staffInfo.checkStaffInfomation();
                                 }
                                 else if(answer5==2){
                                     System.out.println("Hi");

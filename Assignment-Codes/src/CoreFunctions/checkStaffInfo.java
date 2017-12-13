@@ -9,34 +9,30 @@ import entity.*;
 public class checkStaffInfo {
 
      ArrayList staffInfo=  new ArrayList();
-   
-     
-     
-      Staff staff = new Staff();
+     Staff staff = new Staff();
       
       
     
     
-    public void checkStaffInfo(){
+    public void checkStaffInfomation(){
+        
        Scanner scanner = new Scanner(System.in); 
              System.out.println("Please key in the staff ID:");
              int id= scanner.nextInt();
-             staff.setStaffID(id);
-        for(int i=0;i<staffInfo.size();i++)
+            // staff.setStaffID(id);
+        for(int i=1;i<staffInfo.size();i++)
         {
-            if(staffInfo.get(i).equals(id))
+            if(!staffInfo.get(i).equals(id))
             {
-               //System.out.println(staffInfo.toString());
                 System.out.println(staff.getStaffName());
-               System.out.println(staff.getStaffPhone());
+                System.out.println(staff.getStaffPhone());
                 System.out.println(staff.getStaffAddress());
                 System.out.println(staff.getStaffAge());
-              //  System.out.println("no record found");
-                
             }
             else
             {
-                System.out.println("no staff record found");
+             System.out.println("no record found");
+                
             }
                 
         }
@@ -101,7 +97,7 @@ public class checkStaffInfo {
     
     public void DailyTrasactionReport(){
         
-        for(int i=0;i<staffInfo.size();i++){
+        for(int i=1;i<staffInfo.size();i++){
         System.out.println("Daily Transation Report");
         System.out.println("Delivery Man ID:\n"+ staff.getStaffID());
         System.out.println("Delivery Man Name:\n"+staff.getStaffName());
@@ -122,7 +118,7 @@ public class checkStaffInfo {
     public static void main(String args[]){
         checkStaffInfo kk= new checkStaffInfo();
         kk.createStaffRecord();
-        kk.checkStaffInfo();
+       kk.checkStaffInfomation();
         kk.DailyTrasactionReport();
     }
 }
