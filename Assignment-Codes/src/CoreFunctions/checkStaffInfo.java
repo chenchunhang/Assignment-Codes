@@ -8,10 +8,10 @@ import entity.*;
 
 public class checkStaffInfo {
 
-     ArrayList staffInfo=  new ArrayList();
+     ArrayList <Staff> staffInfo=  new ArrayList<>();
      Staff staff = new Staff();
       
-      
+      private static int empNum = 1000;
     
     
     public void checkStaffInfomation(){
@@ -40,15 +40,16 @@ public class checkStaffInfo {
         
     }
     public void createStaffRecord(){
-         
-        
-        
+         String answer = "y";
+       
+        while(answer.equals("y") || answer.equals("Y") ){
         System.out.println("Please enter staff information\n");
         Scanner scanner = new Scanner(System.in);
         
+        
         System.out.println("ID:\n");
-       int i=1000;
-       staff.setStaffID(++i);
+       
+       staff.setStaffID(getUniqueEmpId());
       
        
         System.out.println("Delivery Boy Name:\n");
@@ -68,7 +69,7 @@ public class checkStaffInfo {
         System.out.println("Deliver Boy Age:\n");
        int age= scanner.nextInt();
        staff.setStaffAge(age);
-        staffInfo.add(staff);
+        
        
       
        staffInfo.add(staff);
@@ -77,8 +78,12 @@ public class checkStaffInfo {
        System.out.println(staff.getStaffPhone());
        System.out.println(staff.getStaffAddress());
        System.out.println(staff.getStaffAge());
-    
-        }
+       
+       System.out.println("Do u want to add record again?(y or Y)");
+       answer= scanner.next();
+       
+     }
+    }
        
     
     public void RetrievePendingOrder(List<Orders> orderlist ){
@@ -97,10 +102,11 @@ public class checkStaffInfo {
     
     public void DailyTrasactionReport(){
         
-        for(int i=1;i<staffInfo.size();i++){
+        for(int i=0;i<staffInfo.size();i++){
         System.out.println("Daily Transation Report");
-        System.out.println("Delivery Man ID:\n"+ staff.getStaffID());
-        System.out.println("Delivery Man Name:\n"+staff.getStaffName());
+        System.out.println(staffInfo.size());
+        System.out.println("Delivery Man ID:\n"+ staffInfo.get(i).getStaffID());
+        System.out.println("Delivery Man Name:\n"+staffInfo.get(i).getStaffName());
         System.out.println("Total Delivery Completed:\n"); 
         System.out.println("12\n");
         System.out.println("14\n");
@@ -115,11 +121,15 @@ public class checkStaffInfo {
         
         
     }
+    public static int getUniqueEmpId() {
+        empNum = empNum + 1;
+        return empNum;
+    }
     public static void main(String args[]){
         checkStaffInfo kk= new checkStaffInfo();
-        kk.createStaffRecord();
-       kk.checkStaffInfomation();
-        kk.DailyTrasactionReport();
+       kk.createStaffRecord();
+      // kk.checkStaffInfomation();
+       kk.DailyTrasactionReport();
     }
 }
    
