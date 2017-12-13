@@ -55,11 +55,33 @@ public class CustomerMenu {
                     }
                     String OrderList = "";
                     System.out.println("\nThank You for order");
+                    int totalprice = 0 ;
                     for(int i = 0; i < itemlist.size(); i ++){
+                        totalprice =( itemlist.get(i).getQuantity() * itemlist.get(i).getitemPrice() ) + totalprice;
                         OrderList += (i + 1) + ". " + itemlist.get(i) + "\n";
                     }
                     System.out.println("Here is a list of your order");
                     System.out.println(OrderList);
+                    System.out.println("Total Amount: RM" + totalprice);
+                    System.out.print("Make Payment now? (1 = yes / 2 = no)");
+                    int makePayment = scan.nextInt();
+                    if(makePayment == 1){
+                        System.out.println("Payment Accepted. Thank you for your purchase and please come again!");
+                        try{
+                            Thread.sleep(3000);
+                        }catch(Exception e){
+                            
+                        }
+                    }if(makePayment == 2){
+                        System.out.println("Order Canceled. Come again next time");
+                        try{
+                            Thread.sleep(3000);
+                        }catch(Exception e){
+                            
+                        }
+                    }else{
+                    System.out.println("Sorry, incorrect input.");
+                    }
                 }else{
                     System.out.println("Sorry, incorrect input.");
                 }
