@@ -38,21 +38,24 @@ public class DeliveryManMenu {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         boolean validation = true;
+        String workStatus = "";
 
         DeliveryManLogin login = new DeliveryManLogin();
         DeliveryManLoggedIn = login.DeliveryManLogin();
        
          DeliveryMan.add(DeliveryManLoggedIn);
+          do{ 
          //System.out.println("My Size:>>>"+DeliveryMan.size());
          System.out.println("|****************************************************|");
          System.out.println("");
-         System.out.println("    Welcome "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
-         System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
-         System.out.println("    Clock in at : " + dateFormat.format(date));
+         System.out.println("    Welcome       "+DeliveryMan.get(0).getDeliveryManName()+ "! ");
+         System.out.println("    Shift       : "+DeliveryMan.get(0).getDeliveryManShift());
+         System.out.println("    Clock in at : "+ dateFormat.format(date));
+         System.out.println("    Status      : "+ workStatus);
          System.out.println("");
          System.out.println("|****************************************************|");
          
-        do{ 
+       
          
         System.out.println("Food Delivery Menu Function List: ");
         System.out.println("1.View Current Food Order");
@@ -92,7 +95,40 @@ public class DeliveryManMenu {
                     hour.StaffWorkingHourFunction();
                     break;
                 case 3:
+                    int counter1 = 0;
+                    while(counter1 == 0){                                        
+                    System.out.println("Change current work status");
+                    System.out.println("1.Available");
+                    System.out.println("2.Delivery");
+                    System.out.println("3.Break");
+                    System.out.println("Enter Your Choice: ");
+                    int answer3 = scan.nextInt();
+                    if(answer3 == 1 ){                   
+                    workStatus = "Avalilable";
+                    System.out.println("\n\nWork status change successful!");
+                    counter1 = 1;
+                    validation = false;
+                    }else if(answer3 == 2){
+                        
+                    workStatus = "Delivery";
+                    System.out.println("\n\nWork status change successful!");
+                    counter1 = 1;
+                    validation = false;
+                    }else if(answer3 == 3){
+
+                    workStatus = "Break";
+                    System.out.println("\n\nWork status change successful!");
+                    counter1 = 1;
+                    validation = false;
+                                                              
+                    }else{
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("Sorry, Input Incorrect. Please try again.");
                     
+                    
+                }       
+                    }
                     break;
                 case 4:
                     DateFormat dateFormat1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -112,7 +148,7 @@ public class DeliveryManMenu {
                         System.out.println("    Shift : "+DeliveryMan.get(0).getDeliveryManShift());
                         System.out.println("    Clock out at : " + dateFormat1.format(date1));
                         System.out.println("");
-                        System.out.println("|****************************************************|");
+                        System.out.println("|****************************************************|\n\n");
                         
                         couter = 1;
                     
