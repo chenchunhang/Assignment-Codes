@@ -107,7 +107,7 @@ public class MainMenu {
                                 System.out.println("Please enter you selection:");
                                 int answer5= scan.nextInt();
                                 if(answer5 ==1){
-                                    
+                                    staffInfo.checkStaffInfomation();;
                                
                                 }
                                 else if(answer5==2){

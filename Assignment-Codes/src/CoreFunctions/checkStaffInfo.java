@@ -15,7 +15,7 @@ public class checkStaffInfo {
     public void checkStaffInfomation(){
       
        Scanner scanner = new Scanner(System.in); 
-        System.out.println(staffInfo.get(0).getStaffID());
+       // System.out.println(staffInfo.get(0).getStaffID());
              
         for(int i=0;i<staffInfo.size();i++)
         {
@@ -24,12 +24,14 @@ public class checkStaffInfo {
             System.out.println(id);
             if( staffInfo.get(i).getStaffID() == id)
             {
-             //   System.out.println(staffInfo.toString());
-                 Staff staff = staffInfo.get(i);
-                System.out.println(staff.getStaffPhone());
-                System.out.println(staff.getStaffAddress());
-                System.out.println(staff.getStaffAge());
-               // System.out.println("no found");
+            
+                Staff staff = staffInfo.get(i);
+                System.out.println("Name:"+staff.getStaffName()); 
+                System.out.println("Phone:"+staff.getStaffPhone());
+                System.out.println("Address:"+staff.getStaffAddress());
+                System.out.println("Age:"+staff.getStaffAge());
+                System.out.println("Status:"+staff.getStaffStatus());
+              
                 
             }
             else
@@ -51,36 +53,40 @@ public class checkStaffInfo {
             Scanner scanner = new Scanner(System.in);
 
 
-            System.out.println("ID:\n");
+            System.out.println("ID:");
 
            staff.setStaffID(getUniqueEmpId());
 
 
-            System.out.println("Delivery Boy Name:\n");
+            System.out.println("Delivery Boy Name:");
            String name= scanner.nextLine();
            staff.setStaffName(name);
 
-             System.out.println("Deliver Boy Address:\n");
+             System.out.println("Deliver Boy Address:");
            String address= scanner.nextLine();
            staff.setStaffAddress(address);
 
-            System.out.println("Delivery Phone Number:\n");
+            System.out.println("Delivery Phone Number:");
            int phoneNum= scanner.nextInt();
            staff.setStaffPhone(phoneNum);
 
 
-            System.out.println("Deliver Boy Age:\n");
+            System.out.println("Deliver Boy Age:");
            int age= scanner.nextInt();
            staff.setStaffAge(age);
+           
+            System.out.println("Deliver Boy Status:Active");
+            staff.setStaffStatus("Active");
 
             
             
            staffInfo.add(staff);
-          System.out.println(staff.getStaffID());
-           System.out.println(staff.getStaffName());
-           System.out.println(staff.getStaffPhone());
-           System.out.println(staff.getStaffAddress());
-           System.out.println(staff.getStaffAge());
+          System.out.println("ID:"+staff.getStaffID());
+           System.out.println("Name:"+staff.getStaffName());
+           System.out.println("Phone:"+staff.getStaffPhone());
+           System.out.println("Address:"+staff.getStaffAddress());
+           System.out.println("Age:"+staff.getStaffAge());
+           System.out.println("Status:"+staff.getStaffStatus());
           
            System.out.println("Do u want to add record again?(y or Y)");
            answer= scanner.next();
@@ -108,18 +114,15 @@ public class checkStaffInfo {
     
     public void DailyTrasactionReport(){
         
-        for(int i=0;i<staffInfo.size();i++){
+        //for(int i=0;i<staffInfo.size();i++){
         System.out.println("Daily Transation Report");
         System.out.println("Delivery Man ID   Delivery Man Name  Total Delivery Completed     Total Distance Delivered " );
-        System.out.printf(staffInfo.get(i).getStaffID() + "\t\t" + staffInfo.get(i).getStaffName()+"\t\t12\n"+"\t\t\t12\n"+"\t\t\t12\n");
+        System.out.printf("1001 \t\t\t David \t\t\t  5\t\t\t  12km\n");
+         System.out.printf("1002 \t\t\t Victor \t\t 12\t\t\t  40km\n");
+          System.out.printf("1003 \t\t\t Meng \t\t\t 18\t\t\t  50km\n");
+    
         
-         
-     
-        System.out.println("\t\t\t\t40km");
-        System.out.println("\t\t\t\t50km");
-        System.out.println("\t\t\t\t85km");
-        
-        }
+        //}
         
         
         
@@ -142,68 +145,90 @@ public class checkStaffInfo {
             {
                 
                 Staff staff = staffInfo.get(i);
-                System.out.println(staff.getStaffName());
-                System.out.println(staff.getStaffPhone());
-                System.out.println(staff.getStaffAddress());
-                System.out.println(staff.getStaffAge());
-                  System.out.println("Key in the number you wish to update");
-                System.out.println("1. Name");
-                System.out.println("2. Phone Number");
-                System.out.println("3. Address");
-                System.out.println("4. Age");
+                System.out.println("Name:"+staff.getStaffName()); 
+                System.out.println("Phone:"+staff.getStaffPhone());
+                System.out.println("Address:"+staff.getStaffAddress());
+                System.out.println("Age:"+staff.getStaffAge());
+                System.out.println("Status:"+staff.getStaffStatus());
+               
+                    System.out.println("Key in the number you wish to update");
+                    System.out.println("1. Name");
+                    System.out.println("2. Phone Number");
+                    System.out.println("3. Address");
+                    System.out.println("4. Age");
+                   System.out.println("5. Status");
                 int id2= scanner.nextInt();
-                //here should use switch statement instead if else
+               
                 switch(id2)
                 {
                     case 1:
                     {
-                    System.out.println(staff.getStaffName());
+                    System.out.println("Name:"+staff.getStaffName());
                     System.out.println("Enter a new name:");
                     String name= scanner.next();
                     staff.setStaffName(name);
-                    System.out.println(staff.getStaffName());
-                    System.out.println(staff.getStaffPhone());
-                    System.out.println(staff.getStaffAddress());
-                    System.out.println(staff.getStaffAge());
+                    System.out.println("Name:"+staff.getStaffName()); 
+                    System.out.println("Phone:"+staff.getStaffPhone());
+                    System.out.println("Address:"+staff.getStaffAddress());
+                    System.out.println("Age:"+staff.getStaffAge());
+                    System.out.println("Status:"+staff.getStaffStatus());
                     }
                     break;
                 
                     case 2:
                     {
-                    System.out.println(staff.getStaffPhone());
+                    System.out.println("Phone:"+staff.getStaffPhone());
                     System.out.println("Enter a new phone:");
                     int phone= scanner.nextInt();
                     staff.setStaffPhone(phone);
-                     System.out.println(staff.getStaffName());
-                     System.out.println(staff.getStaffPhone());
-                     System.out.println(staff.getStaffAddress());
-                     System.out.println(staff.getStaffAge());
+                    System.out.println("Name:"+staff.getStaffName()); 
+                    System.out.println("Phone:"+staff.getStaffPhone());
+                    System.out.println("Address:"+staff.getStaffAddress());
+                    System.out.println("Age:"+staff.getStaffAge());
+                    System.out.println("Status:"+staff.getStaffStatus());
                     }
                 break;
                
                     case 3:
                     {
-                    System.out.println(staff.getStaffAddress());
+                    System.out.println("Address:"+staff.getStaffAddress());
                     System.out.println("Enter a new Address:");
                     String address= scanner.next();
                     staff.setStaffAddress(address);
-                    System.out.println(staff.getStaffName());
-                    System.out.println(staff.getStaffPhone());
-                    System.out.println(staff.getStaffAddress());
-                    System.out.println(staff.getStaffAge());
+                    System.out.println("Name:"+staff.getStaffName()); 
+                    System.out.println("Phone:"+staff.getStaffPhone());
+                    System.out.println("Address:"+staff.getStaffAddress());
+                    System.out.println("Age:"+staff.getStaffAge());
+                    System.out.println("Status:"+staff.getStaffStatus());
                     }
                     break;
                 
                     case 4:
                     {
-                    System.out.println(staff.getStaffAge());
+                    System.out.println("Age:"+staff.getStaffAge());
                     System.out.println("Enter a new age:");
                     int age= scanner.nextInt();
                     staff.setStaffAge(age);
-                    System.out.println(staff.getStaffName());
-                    System.out.println(staff.getStaffPhone());
-                    System.out.println(staff.getStaffAddress());
-                    System.out.println(staff.getStaffAge());
+                    System.out.println("Name:"+staff.getStaffName()); 
+                    System.out.println("Phone:"+staff.getStaffPhone());
+                    System.out.println("Address:"+staff.getStaffAddress());
+                    System.out.println("Age:"+staff.getStaffAge());
+                    System.out.println("Status:"+staff.getStaffStatus());
+                    }
+                   break;
+                   
+                   
+                    case 5:
+                    {
+                    System.out.println("Status:"+staff.getStaffStatus());
+                    System.out.println("Enter a new status:");
+                    String status= scanner.next();
+                    staff.setStaffStatus(status);
+                    System.out.println("Name:"+staff.getStaffName()); 
+                    System.out.println("Phone:"+staff.getStaffPhone());
+                    System.out.println("Address:"+staff.getStaffAddress());
+                    System.out.println("Age:"+staff.getStaffAge());
+                    System.out.println("Status:"+staff.getStaffStatus());
                     }
                    break;
                     
@@ -221,7 +246,7 @@ public class checkStaffInfo {
        
         
     }
-   
+    
 }
    
     
