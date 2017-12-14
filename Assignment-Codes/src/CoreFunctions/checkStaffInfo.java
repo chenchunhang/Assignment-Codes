@@ -110,17 +110,15 @@ public class checkStaffInfo {
         
         for(int i=0;i<staffInfo.size();i++){
         System.out.println("Daily Transation Report");
-        System.out.println("Delivery Man ID:\n"+ staffInfo.get(i).getStaffID());
-        System.out.println("Delivery Man Name:\n"+staffInfo.get(i).getStaffName());
-        System.out.println("Total Delivery Completed:\n"); 
-        System.out.println("12\n");
-        System.out.println("14\n");
-        System.out.println("20\n");
-        System.out.println("Total Distance Delivered:\n"); 
-        System.out.println("40km\n");
-        System.out.println("50km\n");
-        System.out.println("85km\n");
-        System.out.println("");
+        System.out.println("Delivery Man ID   Delivery Man Name  Total Delivery Completed     Total Distance Delivered " );
+        System.out.printf(staffInfo.get(i).getStaffID() + "\t\t" + staffInfo.get(i).getStaffName()+"\t\t12\n"+"\t\t\t12\n"+"\t\t\t12\n");
+        
+         
+     
+        System.out.println("\t\t\t\t40km");
+        System.out.println("\t\t\t\t50km");
+        System.out.println("\t\t\t\t85km");
+        
         }
         
         
@@ -190,9 +188,9 @@ public class checkStaffInfo {
                     String address= scanner.next();
                     staff.setStaffAddress(address);
                     System.out.println(staff.getStaffName());
-                System.out.println(staff.getStaffPhone());
-                System.out.println(staff.getStaffAddress());
-                System.out.println(staff.getStaffAge());
+                    System.out.println(staff.getStaffPhone());
+                    System.out.println(staff.getStaffAddress());
+                    System.out.println(staff.getStaffAge());
                     }
                     break;
                 
@@ -203,9 +201,9 @@ public class checkStaffInfo {
                     int age= scanner.nextInt();
                     staff.setStaffAge(age);
                     System.out.println(staff.getStaffName());
-                System.out.println(staff.getStaffPhone());
-                System.out.println(staff.getStaffAddress());
-                System.out.println(staff.getStaffAge());
+                    System.out.println(staff.getStaffPhone());
+                    System.out.println(staff.getStaffAddress());
+                    System.out.println(staff.getStaffAge());
                     }
                    break;
                     
@@ -223,13 +221,7 @@ public class checkStaffInfo {
        
         
     }
-    public static void main(String args[]){
-        checkStaffInfo kk= new checkStaffInfo();
-       kk.createStaffRecord();
-       kk.updateInformation();
-     // kk.checkStaffInfomation();
-      // kk.DailyTrasactionReport();
-    }
+   
 }
    
     

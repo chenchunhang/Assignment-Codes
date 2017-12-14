@@ -94,6 +94,8 @@ public class MainMenu {
                         }else if(answer3 == 2){
                             // Human Resources department
                                 checkStaffInfo staffInfo = new checkStaffInfo();
+                                int ContinueHuman= 1;
+                                while(ContinueHuman == 1){
                                 System.out.println("Welcome to Human Resources");
                                 System.out.println("===========================");
                                 System.out.println("1.View Staff Information");
@@ -101,6 +103,7 @@ public class MainMenu {
                                 System.out.println("3.View Pending Order");
                                 System.out.println("4.View Transaction Report");
                                 System.out.println("5.Create Staff Record");
+                                System.out.println("6. Exit");
                                 System.out.println("Please enter you selection:");
                                 int answer5= scan.nextInt();
                                 if(answer5 ==1){
@@ -108,7 +111,7 @@ public class MainMenu {
                                
                                 }
                                 else if(answer5==2){
-                                    System.out.println("Hi");
+                                    staffInfo.updateInformation();
                                 }
                                 else if(answer5==3)
                                 {
@@ -124,12 +127,15 @@ public class MainMenu {
                                        
                                             }
                                 else if(answer5==5){
+                                    
                                     staffInfo.createStaffRecord();
-                                    staffInfo.DailyTrasactionReport();
+                                }else if(answer5 == 6){
+                                    ContinueHuman = 0;
                                 }
-                               
+                            }
                         break;      
-                        }
+                        
+                       }
                         //incomplete
                         
                     case 4:
